@@ -9,3 +9,7 @@
 *.xcscheme
 */*.xcodeproj/xcuserdata
 .DS_Store
+*.opensdf
+*.sdf
+*.suo
+*.vcxproj.user
