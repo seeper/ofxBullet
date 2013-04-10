@@ -45,7 +45,7 @@ void ofxBulletCylinder::create( btDiscreteDynamicsWorld* a_world, ofVec3f a_loc,
 }
 
 //--------------------------------------------------------------
-void ofxBulletCylinder::create( btDiscreteDynamicsWorld* a_world, btTransform a_bt_tr, float a_mass, float a_radius, float a_height) {
+void ofxBulletCylinder::create( btDiscreteDynamicsWorld* a_world, btTransform  const&a_bt_tr, float a_mass, float a_radius, float a_height) {
 	if(!_bInited || _shape == NULL) {
 		ofxBulletBaseShape::create( a_world, (btCollisionShape*)ofBtGetCylinderCollisionShape(a_radius, a_height), a_bt_tr, a_mass );
 	} else {

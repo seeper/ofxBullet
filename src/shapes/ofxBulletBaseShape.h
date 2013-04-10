@@ -30,7 +30,7 @@ public:
 		OFX_BULLET_CUSTOM_SHAPE = 6
 	};
 	
-	virtual void create( btDiscreteDynamicsWorld* a_world, btCollisionShape* a_colShape, btTransform a_bt_tr, float a_mass );
+	virtual void create( btDiscreteDynamicsWorld* a_world, btCollisionShape* a_colShape, btTransform  const& a_bt_tr, float a_mass );
 	virtual void add();
 	void	remove();
 	void	removeRigidBody();
