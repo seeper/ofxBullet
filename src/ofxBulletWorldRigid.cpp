@@ -91,8 +91,10 @@ void ofxBulletWorldRigid::checkCollisions() {
 	//cout << "numManifolds: " << numManifolds << endl;
 	for (int i = 0; i < numManifolds; i++) {
 		btPersistentManifold* contactManifold =  world->getDispatcher()->getManifoldByIndexInternal(i);
-		btCollisionObject* obA = static_cast<btCollisionObject*>(contactManifold->getBody0());
-		btCollisionObject* obB = static_cast<btCollisionObject*>(contactManifold->getBody1());
+		// This const cast isn't nice but seems to be the only way at the moment.
+		// See also: http://bulletphysics.org/Bullet/phpBB3/viewtopic.php?f=9&t=8683&p=29513
+		btCollisionObject* obA = const_cast<btCollisionObject*>(contactManifold->getBody0());
+		btCollisionObject* obB = const_cast<btCollisionObject*>(contactManifold->getBody1());
 		
 		int numContacts = contactManifold->getNumContacts();
 		ofxBulletCollisionData cdata;
@@ -155,7 +157,9 @@ ofxBulletRaycastData ofxBulletWorldRigid::raycastTest( ofVec3f a_rayStart, ofVec
 	world->rayTest( rayStart, rayEnd, rayCallback );
 	
 	if (rayCallback.hasHit()) {
-		btRigidBody* body = btRigidBody::upcast(rayCallback.m_collisionObject);
+		// This const cast isn't nice but seems to be the only way at the moment.
+		// See also: http://bulletphysics.org/Bullet/phpBB3/viewtopic.php?f=9&t=8683&p=29513
+		btRigidBody* body = const_cast<btRigidBody*>(btRigidBody::upcast(rayCallback.m_collisionObject));
 		if (body) {
 			data.bHasHit			= true;
 			data.userData			= (ofxBulletUserData*)body->getUserPointer();

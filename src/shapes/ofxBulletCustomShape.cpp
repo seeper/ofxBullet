@@ -88,7 +88,7 @@ bool ofxBulletCustomShape::addMesh( ofMesh a_mesh, ofVec3f a_localScaling, bool 
 		}
 		centroid /= (float)verticies.size();
 		
-		vector<btVector3> newVerts;
+		btAlignedObjectArray<btVector3> newVerts;
 		for ( int i = 0; i < indicies.size(); i++) {
 			btVector3 vertex( verticies[indicies[i]].x, verticies[indicies[i]].y, verticies[indicies[i]].z);
 			vertex *= localScaling;

@@ -8,6 +8,7 @@
  */
 
 #include "ofxBulletCone.h"
+#include "glut.h"
 
 //--------------------------------------------------------------
 ofxBulletCone::ofxBulletCone() {
