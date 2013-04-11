@@ -1,6 +1,9 @@
 ofxBullet
 
-Currently bullet libs are compiled for osx and linux. 
+2013-04-11 Forked from NickHardemann by Seeper to compile on Windows.
+Updated to current version of Bullet (2.81).  
+Make files are still provided for osx and linux and a VS2010 project for Windows.
+
 Linux compatibility thanks to Benjamin Knofe aka benben
 
 To compile for PC, view here: http://code.google.com/p/bullet/downloads/list
@@ -12,7 +15,7 @@ Bullet Physics - http://bulletphysics.org/wordpress/
 
 Supported Versions:
 OpenFrameworks 007 - https://github.com/openframeworks/openFrameworks
-Bullet Physics 2.77 - http://code.google.com/p/bullet/downloads/list
+Bullet Physics 2.81 - http://code.google.com/p/bullet/downloads/list
 
 INSTALLATION (currently libs for osx and linux):
 Move the ofxBullet folder into OpenFrameworks > addons 
